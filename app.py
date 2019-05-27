@@ -10,9 +10,10 @@ app = Flask(__name__)
 CORS(app)
 api = Api(app)
 
-#Router
-api.add_resource(Employees, '/') # Route_1
-api.add_resource(Suma, '/sumar', methods = ["POST"])
+
+api.add_resource(Employees, '/')
+api.add_resource(Operacion, '/operacion', methods = ["POST"])
+api.add_resource(Unimatriz, '/unimatriz', methods = ["POST"])
 
 if __name__ == '__main__':
     app.run(port=PORT, debug=DEBUG)

@@ -144,3 +144,13 @@ class Unimatriz(Resource):
             
             return {'resultado': res, 'mensaje': message}
 
+class Random(Resource):
+    def post(self):
+        global message
+        if request.method == 'POST':
+            resp = request.get_json()
+            print(resp)
+            m = int(resp['m']); n = int(resp['n'])
+            res = random.randint(101, size=(m, n))
+            res = pd.DataFrame(res).to_json( orient='split')
+            return {'data': res}

@@ -14,6 +14,7 @@ api = Api(app)
 api.add_resource(Employees, '/')
 api.add_resource(Operacion, '/operacion', methods = ["POST"])
 api.add_resource(Unimatriz, '/unimatriz', methods = ["POST"])
+api.add_resource(Random, '/random', methods = ["POST"])
 
 if __name__ == '__main__':
     app.run(port=PORT, debug=DEBUG)
